@@ -167,7 +167,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      483 字
+      479 字
     </span>
   
 
@@ -207,29 +207,27 @@
               </p>
             
             <div class="markdown-body" id="post-body">
-              <!--markdown-->## Problem 1. Exponent by iteration ##
-<hr>
+              <!--markdown-->
+<h2 id="Problem-1-Exponent-by-iteration"><a href="#Problem-1-Exponent-by-iteration" class="headerlink" title="Problem 1. Exponent by iteration"></a>Problem 1. Exponent by iteration</h2><hr>
 <p>Write an iterative function <strong><em><a style="color:#ff5252cc">iterPower(base, exp)</a></em></strong> that calculates the exponential <strong><em><a style="color:#ff5252cc">base<sup>exp</sup></a></em></strong> by simply using successive multiplication. For example, <strong><em><a style="color:#ff5252cc">iterPower(base, exp)</a></em></strong> should compute <strong><em><a style="color:#ff5252cc">base<sup>exp</sup></a></em></strong> by multiplying <strong><em><a style="color:#ff5252cc">base</a></em></strong> times itself <strong><em><a style="color:#ff5252cc">exp</a></em></strong> times. Write such a function below.</p>
 <p>This function should take in two values - <strong><em><a style="color:#ff5252cc">base</a></em></strong> can be a float or an integer; <strong><em><a style="color:#ff5252cc">exp</a></em></strong> will be an integer ≥ 0. It should return one numerical value. Your code must be iterative - use of the <a style="color:#ff5252cc">**</a> operator is not allowed.</p>
-<h2 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h2><hr>
-<div class="hljs"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">iterPower</span>(<span class="hljs-params">base, exp</span>):</span>
+<h2 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h2><div class="hljs"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">iterPower</span>(<span class="hljs-params">base, exp</span>):</span>
     result = <span class="hljs-number">1</span>
     <span class="hljs-keyword">while</span> exp &gt; <span class="hljs-number">0</span>:
         result *= base
         exp -= <span class="hljs-number">1</span>
     <span class="hljs-keyword">return</span> result</code></pre></div>
-<hr>
+
 <h2 id="Problem-2-Exponent-by-recurse"><a href="#Problem-2-Exponent-by-recurse" class="headerlink" title="Problem 2. Exponent by recurse"></a>Problem 2. Exponent by recurse</h2><hr>
 <p>In Problem 1, we computed an exponential by iteratively executing successive multiplications. We can use the same idea, but in a recursive function.</p>
 <p>Write a function <strong><em><a style="color:#ff5252cc">recurPower(base, exp)</a></em></strong> which computes <strong><em><a style="color:#ff5252cc">base<sup>exp</sup></a></em></strong> by recursively calling itself to solve a smaller version of the same problem, and then multiplying the result by <strong><em><a style="color:#ff5252cc">base</a></em></strong> to solve the initial problem.</p>
 <p>This function should take in two values - <strong><em><a style="color:#ff5252cc">base</a></em></strong> can be a float or an integer; <strong><em><a style="color:#ff5252cc">exp</a></em></strong> will be an integer ≥0. It should return one numerical value. Your code must be recursive - use of the <a style="color:#ff5252cc">**</a> operator or looping constructs is not allowed.</p>
-<h2 id="Answer-1"><a href="#Answer-1" class="headerlink" title="Answer"></a>Answer</h2><hr>
-<div class="hljs"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">recurPower</span>(<span class="hljs-params">base, exp</span>):</span>
+<h2 id="Answer-1"><a href="#Answer-1" class="headerlink" title="Answer"></a>Answer</h2><div class="hljs"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">recurPower</span>(<span class="hljs-params">base, exp</span>):</span>
     result = <span class="hljs-number">1</span>
     <span class="hljs-keyword">if</span> exp == <span class="hljs-number">0</span>:
         <span class="hljs-keyword">return</span> result
     <span class="hljs-keyword">return</span> base*recurPower(base, exp<span class="hljs-number">-1</span>)</code></pre></div>
-<hr>
+
 <h2 id="Problem-3-The-greatest-common-divisor-1"><a href="#Problem-3-The-greatest-common-divisor-1" class="headerlink" title="Problem 3. The greatest common divisor(1)"></a>Problem 3. The greatest common divisor(1)</h2><hr>
 <p>The greatest common divisor of two positive integers is the largest integer that divides each of them without remainder. </p>
 <p>For example:</p>
@@ -239,14 +237,13 @@ gcd( 9, 12) = 3
 gcd(17, 12) = 1</code></pre></div>
 <hr>
 <p>Write an iterative function, <strong><em><a style="color:#ff5252cc">gcdIter(a, b)</a></em></strong>, that implements this idea. One easy way to do this is to begin with a test value equal to the smaller of the two input arguments, and iteratively reduce this test value by 1 until you either reach a case where the test divides both <strong><em><a style="color:#ff5252cc">a</a></em></strong> and <strong><em><a style="color:#ff5252cc">b</a></em></strong> without remainder, or you reach 1.</p>
-<h2 id="Answer-2"><a href="#Answer-2" class="headerlink" title="Answer"></a>Answer</h2><hr>
-<div class="hljs"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">recurPowerNew</span>(<span class="hljs-params">base, exp</span>):</span>
+<h2 id="Answer-2"><a href="#Answer-2" class="headerlink" title="Answer"></a>Answer</h2><div class="hljs"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">recurPowerNew</span>(<span class="hljs-params">base, exp</span>):</span>
     <span class="hljs-keyword">if</span> exp &lt;= <span class="hljs-number">0</span>:
         <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
     <span class="hljs-keyword">elif</span> exp % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>:
         <span class="hljs-keyword">return</span> recurPowerNew(base*base, exp/<span class="hljs-number">2</span>)
     <span class="hljs-keyword">return</span> base * recurPowerNew(base, exp - <span class="hljs-number">1</span>)</code></pre></div>
-<hr>
+
 <h2 id="Problem-4-The-greatest-common-divisor-2"><a href="#Problem-4-The-greatest-common-divisor-2" class="headerlink" title="Problem 4. The greatest common divisor(2)"></a>Problem 4. The greatest common divisor(2)</h2><hr>
 <p>The greatest common divisor of two positive integers is the largest integer that divides each of them without remainder. </p>
 <p>For example:</p>
@@ -261,13 +258,11 @@ gcd(17, 12) = 1</code></pre></div>
 <li>Otherwise, <strong><em><a style="color:#ff5252cc">gcd(a, b)</a></em></strong> is the same as <strong><em><a style="color:#ff5252cc">gcd(b, a % b)</a></em></strong></li>
 </ul>
 <p>Write a function <strong><em><a style="color:#ff5252cc">gcdRecur(a, b)</a></em></strong> that implements this idea recursively. This function takes in two positive integers and returns one integer.</p>
-<h2 id="Answer-3"><a href="#Answer-3" class="headerlink" title="Answer"></a>Answer</h2><hr>
-<div class="hljs"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">gcdIter</span>(<span class="hljs-params">a,b</span>):</span>
+<h2 id="Answer-3"><a href="#Answer-3" class="headerlink" title="Answer"></a>Answer</h2><div class="hljs"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">gcdIter</span>(<span class="hljs-params">a,b</span>):</span>
     result = <span class="hljs-built_in">min</span>(a,b)
     <span class="hljs-keyword">while</span> a % result != <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> b % result != <span class="hljs-number">0</span>:
         result -= <span class="hljs-number">1</span>
     <span class="hljs-keyword">return</span> result</code></pre></div>
-<hr>
 
             </div>
             <hr>
