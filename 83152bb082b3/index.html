@@ -167,7 +167,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      426 字
+      784 字
     </span>
   
 
@@ -207,7 +207,66 @@
               </p>
             
             <div class="markdown-body" id="post-body">
-              <!--markdown-->## Problem 1. Exponent by iteration ##\r\n----------\r\nWrite an iterative function ***<a style=\"color:#ff5252cc\">iterPower(base, exp)</a>*** that calculates the exponential ***<a style=\"color:#ff5252cc\">base<sup>exp</sup></a>*** by simply using successive multiplication. For example, ***<a style=\"color:#ff5252cc\">iterPower(base, exp)</a>*** should compute ***<a style=\"color:#ff5252cc\">base<sup>exp</sup></a>*** by multiplying ***<a style=\"color:#ff5252cc\">base</a>*** times itself ***<a style=\"color:#ff5252cc\">exp</a>*** times. Write such a function below.\r\n\r\nThis function should take in two values - ***<a style=\"color:#ff5252cc\">base</a>*** can be a float or an integer; ***<a style=\"color:#ff5252cc\">exp</a>*** will be an integer ≥ 0. It should return one numerical value. Your code must be iterative - use of the <a style=\"color:#ff5252cc\">**</a> operator is not allowed.\r\n\r\n## Answer ##\r\n----------\r\n```python\r\ndef iterPower(base, exp):\r\n    result = 1\r\n    while exp > 0:\r\n        result *= base\r\n        exp -= 1\r\n    return result\r\n```\r\n----------\r\n## Problem 2. Exponent by recurse ##\r\n----------\r\nIn Problem 1, we computed an exponential by iteratively executing successive multiplications. We can use the same idea, but in a recursive function.\r\n\r\nWrite a function ***<a style=\"color:#ff5252cc\">recurPower(base, exp)</a>*** which computes ***<a style=\"color:#ff5252cc\">base<sup>exp</sup></a>*** by recursively calling itself to solve a smaller version of the same problem, and then multiplying the result by ***<a style=\"color:#ff5252cc\">base</a>*** to solve the initial problem.\r\n\r\nThis function should take in two values - ***<a style=\"color:#ff5252cc\">base</a>*** can be a float or an integer; ***<a style=\"color:#ff5252cc\">exp</a>*** will be an integer ≥0. It should return one numerical value. Your code must be recursive - use of the <a style=\"color:#ff5252cc\">**</a> operator or looping constructs is not allowed.\r\n\r\n## Answer ##\r\n----------\r\n```python\r\ndef recurPower(base, exp):\r\n    result = 1\r\n    if exp == 0:\r\n        return result\r\n    return base*recurPower(base, exp-1)\r\n```\r\n----------\r\n## Problem 3. The greatest common divisor(1) ##\r\n----------\r\nThe greatest common divisor of two positive integers is the largest integer that divides each of them without remainder. \r\n\r\nFor example:\r\n```bash\r\ngcd( 2, 12) = 2\r\ngcd( 6, 12) = 6\r\ngcd( 9, 12) = 3\r\ngcd(17, 12) = 1\r\n```\r\n----------\r\nWrite an iterative function, ***<a style=\"color:#ff5252cc\">gcdIter(a, b)</a>***, that implements this idea. One easy way to do this is to begin with a test value equal to the smaller of the two input arguments, and iteratively reduce this test value by 1 until you either reach a case where the test divides both ***<a style=\"color:#ff5252cc\">a</a>*** and ***<a style=\"color:#ff5252cc\">b</a>*** without remainder, or you reach 1.\r\n\r\n## Answer ##\r\n----------\r\n```python\r\ndef recurPowerNew(base, exp):\r\n    if exp <= 0:\r\n        return 1\r\n    elif exp % 2 == 0:\r\n        return recurPowerNew(base*base, exp/2)\r\n    return base * recurPowerNew(base, exp - 1)\r\n```\r\n----------\r\n## Problem 4. The greatest common divisor(2) ##\r\n----------\r\nThe greatest common divisor of two positive integers is the largest integer that divides each of them without remainder. \r\n\r\nFor example:\r\n```bash\r\ngcd( 2, 12) = 2\r\ngcd( 6, 12) = 6\r\ngcd( 9, 12) = 3\r\ngcd(17, 12) = 1\r\n```\r\n----------\r\nA clever mathematical trick (due to Euclid) makes it easy to find greatest common divisors. Suppose that ***<a style=\"color:#ff5252cc\">a</a>*** and ***<a style=\"color:#ff5252cc\">b</a>*** are two positive integers:\r\n\r\n* If ***<a style=\"color:#ff5252cc\">b = 0</a>***, then the answer is ***<a style=\"color:#ff5252cc\">a</a>***\r\n* Otherwise, ***<a style=\"color:#ff5252cc\">gcd(a, b)</a>*** is the same as ***<a style=\"color:#ff5252cc\">gcd(b, a % b)</a>***\r\n\r\nWrite a function ***<a style=\"color:#ff5252cc\">gcdRecur(a, b)</a>*** that implements this idea recursively. This function takes in two positive integers and returns one integer.\r\n\r\n## Answer ##\r\n----------\r\n```python\r\ndef gcdIter(a,b):\r\n    result = min(a,b)\r\n    while a % result != 0 or b % result != 0:\r\n        result -= 1\r\n    return result\r\n```\r\n----------
+              <h2 id="lt-–markdown–-gt-Problem-1-Exponent-by-iteration"><a href="#lt-–markdown–-gt-Problem-1-Exponent-by-iteration" class="headerlink" title="&lt;!–markdown–&gt;## Problem 1. Exponent by iteration ##"></a>&lt;!–markdown–&gt;## Problem 1. Exponent by iteration ##</h2><p>Write an iterative function <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;iterPower(base, exp)&lt;/a&gt;</em></strong> that calculates the exponential <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;base&lt;sup&gt;exp&lt;/sup&gt;&lt;/a&gt;</em></strong> by simply using successive multiplication. For example, <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;iterPower(base, exp)&lt;/a&gt;</em></strong> should compute <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;base&lt;sup&gt;exp&lt;/sup&gt;&lt;/a&gt;</em></strong> by multiplying <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;base&lt;/a&gt;</em></strong> times itself <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;exp&lt;/a&gt;</em></strong> times. Write such a function below.</p>
+<p>This function should take in two values - <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;base&lt;/a&gt;</em></strong> can be a float or an integer; <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;exp&lt;/a&gt;</em></strong> will be an integer ≥ 0. It should return one numerical value. Your code must be iterative - use of the &lt;a style=&quot;color:#ff5252cc&quot;&gt;**&lt;/a&gt; operator is not allowed.</p>
+<h2 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h2><hr>
+<div class="hljs"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">iterPower</span>(<span class="hljs-params">base, exp</span>):</span>
+    result = <span class="hljs-number">1</span>
+    <span class="hljs-keyword">while</span> exp &amp;gt; <span class="hljs-number">0</span>:
+        result *= base
+        exp -= <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> result</code></pre></div>
+<hr>
+<h2 id="Problem-2-Exponent-by-recurse"><a href="#Problem-2-Exponent-by-recurse" class="headerlink" title="Problem 2. Exponent by recurse"></a>Problem 2. Exponent by recurse</h2><hr>
+<p>In Problem 1, we computed an exponential by iteratively executing successive multiplications. We can use the same idea, but in a recursive function.</p>
+<p>Write a function <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;recurPower(base, exp)&lt;/a&gt;</em></strong> which computes <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;base&lt;sup&gt;exp&lt;/sup&gt;&lt;/a&gt;</em></strong> by recursively calling itself to solve a smaller version of the same problem, and then multiplying the result by <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;base&lt;/a&gt;</em></strong> to solve the initial problem.</p>
+<p>This function should take in two values - <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;base&lt;/a&gt;</em></strong> can be a float or an integer; <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;exp&lt;/a&gt;</em></strong> will be an integer ≥0. It should return one numerical value. Your code must be recursive - use of the &lt;a style=&quot;color:#ff5252cc&quot;&gt;**&lt;/a&gt; operator or looping constructs is not allowed.</p>
+<h2 id="Answer-1"><a href="#Answer-1" class="headerlink" title="Answer"></a>Answer</h2><hr>
+<div class="hljs"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">recurPower</span>(<span class="hljs-params">base, exp</span>):</span>
+    result = <span class="hljs-number">1</span>
+    <span class="hljs-keyword">if</span> exp == <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">return</span> result
+    <span class="hljs-keyword">return</span> base*recurPower(base, exp<span class="hljs-number">-1</span>)</code></pre></div>
+<hr>
+<h2 id="Problem-3-The-greatest-common-divisor-1"><a href="#Problem-3-The-greatest-common-divisor-1" class="headerlink" title="Problem 3. The greatest common divisor(1)"></a>Problem 3. The greatest common divisor(1)</h2><hr>
+<p>The greatest common divisor of two positive integers is the largest integer that divides each of them without remainder. </p>
+<p>For example:</p>
+<div class="hljs"><pre><code class="hljs bash">gcd( 2, 12) = 2
+gcd( 6, 12) = 6
+gcd( 9, 12) = 3
+gcd(17, 12) = 1</code></pre></div>
+<hr>
+<p>Write an iterative function, <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;gcdIter(a, b)&lt;/a&gt;</em></strong>, that implements this idea. One easy way to do this is to begin with a test value equal to the smaller of the two input arguments, and iteratively reduce this test value by 1 until you either reach a case where the test divides both <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;a&lt;/a&gt;</em></strong> and <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;b&lt;/a&gt;</em></strong> without remainder, or you reach 1.</p>
+<h2 id="Answer-2"><a href="#Answer-2" class="headerlink" title="Answer"></a>Answer</h2><hr>
+<div class="hljs"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">recurPowerNew</span>(<span class="hljs-params">base, exp</span>):</span>
+    <span class="hljs-keyword">if</span> exp &amp;lt;= <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
+    <span class="hljs-keyword">elif</span> exp % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">return</span> recurPowerNew(base*base, exp/<span class="hljs-number">2</span>)
+    <span class="hljs-keyword">return</span> base * recurPowerNew(base, exp - <span class="hljs-number">1</span>)</code></pre></div>
+<hr>
+<h2 id="Problem-4-The-greatest-common-divisor-2"><a href="#Problem-4-The-greatest-common-divisor-2" class="headerlink" title="Problem 4. The greatest common divisor(2)"></a>Problem 4. The greatest common divisor(2)</h2><hr>
+<p>The greatest common divisor of two positive integers is the largest integer that divides each of them without remainder. </p>
+<p>For example:</p>
+<div class="hljs"><pre><code class="hljs bash">gcd( 2, 12) = 2
+gcd( 6, 12) = 6
+gcd( 9, 12) = 3
+gcd(17, 12) = 1</code></pre></div>
+<hr>
+<p>A clever mathematical trick (due to Euclid) makes it easy to find greatest common divisors. Suppose that <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;a&lt;/a&gt;</em></strong> and <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;b&lt;/a&gt;</em></strong> are two positive integers:</p>
+<ul>
+<li>If <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;b = 0&lt;/a&gt;</em></strong>, then the answer is <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;a&lt;/a&gt;</em></strong></li>
+<li>Otherwise, <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;gcd(a, b)&lt;/a&gt;</em></strong> is the same as <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;gcd(b, a % b)&lt;/a&gt;</em></strong></li>
+</ul>
+<p>Write a function <strong><em>&lt;a style=&quot;color:#ff5252cc&quot;&gt;gcdRecur(a, b)&lt;/a&gt;</em></strong> that implements this idea recursively. This function takes in two positive integers and returns one integer.</p>
+<h2 id="Answer-3"><a href="#Answer-3" class="headerlink" title="Answer"></a>Answer</h2><hr>
+<div class="hljs"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">gcdIter</span>(<span class="hljs-params">a,b</span>):</span>
+    result = <span class="hljs-built_in">min</span>(a,b)
+    <span class="hljs-keyword">while</span> a % result != <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> b % result != <span class="hljs-number">0</span>:
+        result -= <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> result</code></pre></div>
+<hr>
+
             </div>
             <hr>
             <div>
